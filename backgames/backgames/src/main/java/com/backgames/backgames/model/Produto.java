@@ -1,5 +1,6 @@
 package com.backgames.backgames.model;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -32,11 +33,11 @@ public class Produto {
 	private String plataforma;
 	
 	@NotNull(message = "O atributo é obrigatorio!")
-	@Size( message ="Passe um valor valido!")
-	private long preco;
+	private BigDecimal preco;
 	
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date dataLancamento = new java.sql.Date(System.currentTimeMillis());
+	@NotNull(message = "O atributo é obrigatorio!")
+	@Size(min = 1, max = 100, message ="Passe um valor valido!")
+	private String dataLancamento;
 	
 	@ManyToOne		//dia 28/09
 	@JsonIgnoreProperties("produto")	
@@ -58,22 +59,7 @@ public class Produto {
 		this.nome = nome;
 	}
 
-	public long getPreco() {
-		return preco;
-	}
-
-	public void setPreco(long preco) {
-		this.preco = preco;
-	}
-
-	public Date getDataLancamento() {
-		return dataLancamento;
-	}
-
-	public void setDataLancamento(Date dataLancamento) {
-		this.dataLancamento = dataLancamento;
-	}
-
+	
 	public Categoria getCategoria() {
 		return categoria;
 	}
@@ -88,6 +74,22 @@ public class Produto {
 
 	public void setPlataforma(String plataforma) {
 		this.plataforma = plataforma;
+	}
+
+	public BigDecimal getPreco() {
+		return preco;
+	}
+
+	public void setPreco(BigDecimal preco) {
+		this.preco = preco;
+	}
+
+	public String getDataLancamento() {
+		return dataLancamento;
+	}
+
+	public void setDataLancamento(String dataLancamento) {
+		this.dataLancamento = dataLancamento;
 	}
 
 	
