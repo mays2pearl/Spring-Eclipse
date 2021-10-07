@@ -85,4 +85,12 @@ public class Usuario {
 		this.produto = produto;
 	}
 
+	public List<Produto> getProduto() {
+		return produto;
+	}
+
+	public void setProduto(List<Produto> produto) {
+		this.produto = produto;
+	}
+
 }
