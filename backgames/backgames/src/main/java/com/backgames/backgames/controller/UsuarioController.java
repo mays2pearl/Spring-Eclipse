@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.backgames.backgames.UsuarioService;
 import com.backgames.backgames.model.Usuario;
 import com.backgames.backgames.model.UsuarioLogin;
+import com.backgames.backgames.service.UsuarioService;
 
 @RestController
 @RequestMapping("/usuarios")

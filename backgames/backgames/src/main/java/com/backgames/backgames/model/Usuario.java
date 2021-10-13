@@ -1,5 +1,8 @@
 package com.backgames.backgames.model;
 
+
+
+
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -15,6 +18,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 
 
 
@@ -44,6 +48,17 @@ public class Usuario {
 	@OneToMany(mappedBy = "usuario", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("usuario")
 	private List<Produto> produto;
+	
+	public Usuario(long id, String nome, String usuario, String senha) {
+		this.id = id;
+		this.nome = nome;
+		this.usuario = usuario;
+		this.senha = senha;
+	}
+
+	// Segundo método Construtor
+
+	public Usuario() {	}
 
 	public long getId() {
 		return id;
@@ -77,14 +92,6 @@ public class Usuario {
 		this.senha = senha;
 	}
 
-	public List<Produto> getPostagem() {
-		return produto;
-	}
-
-	public void setPostagem(List<Produto> produto) {
-		this.produto = produto;
-	}
-
 	public List<Produto> getProduto() {
 		return produto;
 	}
@@ -92,5 +99,8 @@ public class Usuario {
 	public void setProduto(List<Produto> produto) {
 		this.produto = produto;
 	}
+
+	
+	
 
 }

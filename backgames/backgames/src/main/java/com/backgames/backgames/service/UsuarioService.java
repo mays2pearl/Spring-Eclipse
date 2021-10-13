@@ -1,4 +1,4 @@
-package com.backgames.backgames;
+package com.backgames.backgames.service;
 
 import java.nio.charset.Charset;
 import java.util.List;
